@@ -8,9 +8,8 @@ import { MdAccessTimeFilled, MdLanguage } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useMoveContext } from "../../hooks/useMovieContext";
 import { useTvShows } from "../../hooks/useTvContext";
-import { api } from "../../services/api";
 import { tv_api } from "../../services/tvshow_api";
-import { InfoTypes, ShowInfoTypes, Types } from "../../types/types";
+import { ShowInfoTypes, Types } from "../../types/types";
 import { apiKey } from "../../Utils/apiKey";
 import { imgUrl } from "../../Utils/imageUrl";
 import {

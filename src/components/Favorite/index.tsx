@@ -8,14 +8,9 @@ import { Footer } from "../Footer";
 import * as S from "./style";
 
 export const Favorites = () => {
+  
   const { favorites } = useMoveContext();
   const { favoriteSeries } = useTvShows();
-
-  const ckeck = () => {
-    if (favoriteSeries.length === 0) {
-      return 0;
-    }
-  };
 
   return (
     <>

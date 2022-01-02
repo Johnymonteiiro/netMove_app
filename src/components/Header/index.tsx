@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ImFilm } from "react-icons/im";
 import { BiCameraMovie } from "react-icons/bi";
-import { MdMovie } from "react-icons/md";
 import { Input } from "../Inputs/Input";
 import { Link } from "react-router-dom";
 import * as S from "./style";
@@ -18,7 +17,16 @@ export const Header = () => {
       setHeader(false);
     }
   };
-  window.addEventListener("scroll", changeHeader);
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeHeader);
+
+    return () => {
+      window.removeEventListener("scroll", changeHeader);
+    };
+    
+  }, []);
+
 
   return (
     <S.Header>
@@ -29,13 +37,15 @@ export const Header = () => {
           </Link>
           <div className="nav-link">
             <Link to="/top&movies" className="link">
-              <ImFilm className="icons"/> Movies
+              <ImFilm className="icons" /> Movies
             </Link>
             <Link to="/tvshows" className="link">
-              <BiCameraMovie className="icons"/>Series
+              <BiCameraMovie className="icons" />
+              Series
             </Link>
             <Link to="/favorites" className="link">
-              <FaListAlt className="icons"/>Favorites
+              <FaListAlt className="icons" />
+              Favorites
             </Link>
             <Input />
           </div>
