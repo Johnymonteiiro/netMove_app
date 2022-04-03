@@ -5,6 +5,7 @@ export const Content = styled.div`
     width: 100%;
     height:100%;
     margin:0 0 30px 0;
+    
     .noPost{
         width:300px;
         height: 300px;
@@ -45,6 +46,11 @@ export const Card = styled.div`
     display:grid;
     grid-template-columns: repeat(auto-fill,minmax(190px,1fr));
     gap:30px;
+
+    @media only screen and (max-width:1152px) {
+      grid-template-columns: repeat(auto,50px);
+      border: 2px solid red;
+    }
 `;
 
 //SWIPPER :
